@@ -1,7 +1,7 @@
-package bao.doan.service;
+package bao.doan.web.service;
 import java.util.List;
 
-import bao.doan.model.People;
+import bao.doan.web.model.People;
  
 
 public interface PeopleService {

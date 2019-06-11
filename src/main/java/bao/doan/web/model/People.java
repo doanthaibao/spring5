@@ -1,4 +1,4 @@
-package bao.doan.model;
+package bao.doan.web.model;
 
 import java.io.Serializable;
 import javax.persistence.*;

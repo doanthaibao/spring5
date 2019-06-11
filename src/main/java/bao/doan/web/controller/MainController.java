@@ -1,4 +1,4 @@
-package bao.doan.controller;
+package bao.doan.web.controller;
 
 import java.util.Iterator;
 import java.util.List;
@@ -13,14 +13,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-import bao.doan.model.People;
-import bao.doan.service.PeopleService;
+import bao.doan.web.model.People;
+import bao.doan.web.service.PeopleService;
 
 @Controller
 public class MainController {
 
   @Autowired
   PeopleService peopleService;
+
 
   @RequestMapping(value = "/home", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
   @ResponseBody
@@ -38,5 +39,13 @@ public class MainController {
     }
 
     return arr.toString();
+  }
+
+  @RequestMapping(value = "/test", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+  @ResponseBody
+  public String test() { 
+    JsonObject obj = new JsonObject();
+    obj.addProperty("test", "test"); 
+    return obj.toString();
   }
 }

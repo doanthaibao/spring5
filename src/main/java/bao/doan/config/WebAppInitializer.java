@@ -1,4 +1,4 @@
-package bao.doan.web.config;
+package bao.doan.config;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -12,14 +12,12 @@ public class WebAppInitializer implements WebApplicationInitializer {
 
   @Override
   public void onStartup(ServletContext servletContext) throws ServletException {
-      AnnotationConfigWebApplicationContext appContext = new AnnotationConfigWebApplicationContext();
-      appContext.register(WebMvcConfig.class);
-       
+      AnnotationConfigWebApplicationContext appContext = new AnnotationConfigWebApplicationContext(); 
+      appContext.register(WebMvcConfig.class); 
       ServletRegistration.Dynamic dispatcher = servletContext.addServlet(
               "SpringDispatcher", new DispatcherServlet(appContext));
       dispatcher.setLoadOnStartup(1);
-      dispatcher.addMapping("/");
-       
+      dispatcher.addMapping("/"); 
   }
 
 }

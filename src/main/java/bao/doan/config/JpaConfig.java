@@ -1,4 +1,4 @@
-package bao.doan.web.config;
+package bao.doan.config;
 
 import javax.persistence.EntityManagerFactory;
 
@@ -10,7 +10,7 @@ import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@EnableJpaRepositories(basePackages = {"bao.doan.repository"})
+@EnableJpaRepositories(basePackages = {"bao.doan.web.repository"})
 @EnableTransactionManagement
 public class JpaConfig {
   @Bean
