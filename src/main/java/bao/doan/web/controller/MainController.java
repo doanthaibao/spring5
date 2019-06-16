@@ -3,6 +3,7 @@ package bao.doan.web.controller;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,7 @@ import bao.doan.web.service.PeopleService;
 @Controller
 public class MainController {
 
+  Logger logger = Logger.getLogger(MainController.class);
   @Autowired
   PeopleService peopleService;
 
@@ -48,4 +50,6 @@ public class MainController {
     obj.addProperty("test", "test"); 
     return obj.toString();
   }
+  
+  
 }
